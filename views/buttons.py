@@ -29,7 +29,7 @@ class ticket_launcher(discord.ui.View):
                                                            ephemeral=True)
 
         if type(self.bot.ticket_mod) is not discord.Role:
-            self.bot.ticket_mod = interaction.guild.get_role(1174258310074081330)
+            self.bot.ticket_mod = interaction.guild.get_role(roleid)
 
         overwrites = {
             interaction.guild.default_role: discord.PermissionOverwrite(view_channel=False),
@@ -81,7 +81,7 @@ class ticket_launcher(discord.ui.View):
                                                            ephemeral=True)
 
         if type(self.bot.ticket_mod) is not discord.Role:
-            self.bot.ticket_mod = interaction.guild.get_role(1174258310074081330)
+            self.bot.ticket_mod = interaction.guild.get_role(roleid)
 
         overwrites = {
             interaction.guild.default_role: discord.PermissionOverwrite(view_channel=False),
@@ -131,7 +131,7 @@ class ticket_launcher(discord.ui.View):
                                                            ephemeral=True)
 
         if type(self.bot.ticket_mod) is not discord.Role:
-            self.bot.ticket_mod = interaction.guild.get_role(1174258310074081330)
+            self.bot.ticket_mod = interaction.guild.get_role(roleid)
 
         overwrites = {
             interaction.guild.default_role: discord.PermissionOverwrite(view_channel=False),
@@ -210,7 +210,7 @@ class main(discord.ui.View):
 
     @discord.ui.button(label="Close Ticket", emoji='🔒', style=discord.ButtonStyle.red, custom_id="close")
     async def close(self, interaction, button):
-        allowed_role_id = 1174258310074081330
+        allowed_role_id = roleid
 
         user = interaction.user
         allowed_role = interaction.guild.get_role(allowed_role_id)
@@ -219,7 +219,7 @@ class main(discord.ui.View):
             embed = discord.Embed(title="Are you sure you want to close this ticket?", color=discord.Colour.blurple())
 
             ticket_channel = interaction.channel
-            transcript_channel_id = 1159450574463455292
+            transcript_channel_id = channelid
 
             await interaction.response.send_message(embed=embed, view=confirm(ticket_channel, transcript_channel_id, self.bot), ephemeral=True)
         else:
