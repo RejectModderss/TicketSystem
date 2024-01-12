@@ -12,5 +12,8 @@ Anything that says allowed channels or something, change it how you would like, 
 
 Discord: rejectmodders
 
+# YouTube Video:
+This is a video that shows everything if you wanna know more before doing anything! https://youtu.be/SFsj3neYjrk
+
 # Please:
 If you can, please keep the credits command, it gives the owner of it credits, its really nice to have credit for your work, if not then thats fine, but it would be nice if you did if you use this source.
