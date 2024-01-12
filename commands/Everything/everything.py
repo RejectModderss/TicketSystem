@@ -144,7 +144,7 @@ class Everything(commands.Cog):
                         f.write(f"{message.author} on {created}: {message.clean_content}\n")
                 generated = datetime.now().strftime("%m/%d/%Y at %H:%M:%S")
                 f.write(
-                    f"\n*Generated at {generated} by {ctx.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*")
+                    f"\n*Generated at {generated} by {ctx.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*\n*Credits: Made by rejectmodders on Discord!*")
             with open(f"{ctx.channel.id}.md", 'rb') as f:
                 await ctx.send(file=discord.File(f, f"{ctx.channel.name}.md"))
             os.remove(f"{ctx.channel.id}.md")
