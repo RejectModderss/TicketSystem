@@ -25,7 +25,7 @@ class Everything(commands.Cog):
     @app_commands.default_permissions(manage_guild=True)
     @app_commands.checks.cooldown(3, 60, key=lambda i: (i.guild_id))
     @app_commands.checks.bot_has_permissions(manage_channels=True)
-    @app_commands.checks.has_role(1174258310074081330)
+    @app_commands.checks.has_role(roleid)
     @commands.guild_only()
     async def ticketing(self, ctx):
         support_description = (
@@ -59,7 +59,7 @@ class Everything(commands.Cog):
     @commands.guild_only()
     async def close(self, ctx):
         allowed_channel_names = ["support-ticket", "report-user-ticket", "staff-application-ticket"]
-        required_role_id = 1174258310074081330
+        required_role_id = roleid
 
         member = ctx.author
         required_role = discord.utils.get(ctx.guild.roles, id=required_role_id)
@@ -67,7 +67,7 @@ class Everything(commands.Cog):
         if required_role in member.roles:
             if any(name in ctx.channel.name for name in allowed_channel_names):
                 ticket_channel = ctx.guild.get_channel(ctx.channel.id)
-                transcript_channel_id = 1159450574463455292
+                transcript_channel_id = channelid
                 confirm_view = confirm(ticket_channel, transcript_channel_id, self.bot)
                 embed = discord.Embed(title="Are you sure you want to close this ticket?",
                                       color=discord.Colour.blurple())
@@ -85,7 +85,7 @@ class Everything(commands.Cog):
     @commands.guild_only()
     async def add(self, ctx, user: discord.Member):
         allowed_channel_names = ["support-ticket", "report-user-ticket", "staff-application-ticket"]
-        required_role_id = 1174258310074081330
+        required_role_id = roleid
 
         member = ctx.author
         required_role = discord.utils.get(ctx.guild.roles, id=required_role_id)
@@ -111,7 +111,7 @@ class Everything(commands.Cog):
 
         if any(name in ctx.channel.name for name in allowed_channel_names):
             if type(self.bot.ticket_mod) is not discord.Role:
-                self.bot.ticket_mod = ctx.guild.get_role(1174258310074081330)
+                self.bot.ticket_mod = ctx.guild.get_role(roleid)
 
             if self.bot.ticket_mod not in ctx.author.roles:
                 return await ctx.send("You aren't authorized to do this!", ephemeral=True)
