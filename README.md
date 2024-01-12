@@ -11,3 +11,6 @@ Anything that says channelid or roleid or has numbers replace them with your cha
 Anything that says allowed channels or something, change it how you would like, just make sure you change everything correclty in the buttons too! If you have errors you can add me on discord.
 
 Discord: rejectmodders
+
+# Please:
+If you can, please keep the credits command, it gives the owner of it credits, its really nice to have credit for your work, if not then thats fine, but it would be nice if you did if you use this source.
