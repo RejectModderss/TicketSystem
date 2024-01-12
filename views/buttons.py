@@ -104,7 +104,7 @@ class ticket_launcher(discord.ui.View):
         embed = discord.Embed(
             title="Apply For Staff Ticket Created",
             description="- This is a **✅ • Apply For Staff Ticket**. If you accidentally opened the wrong ticket, please close it and open the correct one.\n\n"
-                        "- To join our staff, kindly complete this [form](https://forms.gle/51BYb4DKozGVnXmf6). Once you've filled out the form, please reply with `Done` in the ticket so we can acknowledge your completion. If there's no response within 12 hours, we may close the ticket, so please inform us promptly if you're done!\n\n"
+                        "- To join our staff, kindly complete this [form](put your own form here). Once you've filled out the form, please reply with `Done` in the ticket so we can acknowledge your completion. If there's no response within 12 hours, we may close the ticket, so please inform us promptly if you're done!\n\n"
                         "- To close this ticket, please react with 🔒.",
             color=config.main_color
         )
