@@ -1,2 +1,2 @@
 # TicketSystem
-A custom ticket system made by me
+Discord Ticket System made in Discord.py
