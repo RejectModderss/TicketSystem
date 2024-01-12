@@ -187,7 +187,7 @@ class confirm(discord.ui.View):
                 else:
                     f.write(f"{message.author} on {created}: {message.clean_content}\n")
             generated = datetime.now().strftime("%m/%d/%Y at %H:%M:%S")
-            f.write(f"\n*Generated at {generated} by {self.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*")
+            f.write(f"\n*Generated at {generated} by {self.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*\n*Credits: Made by rejectmodders on Discord!*")
 
         transcript_channel = self.bot.get_channel(self.transcript_channel_id)
         if transcript_channel:
@@ -241,7 +241,7 @@ class main(discord.ui.View):
                 else:
                     f.write(f"{message.author} on {created}: {message.clean_content}\n")
             generated = datetime.now().strftime("%m/%d/%Y at %H:%M:%S")
-            f.write(f"\n*Generated at {generated} by {self.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*")
+            f.write(f"\n*Generated at {generated} by {self.bot.user}*\n*Date Formatting: MM/DD/YY*\n*Time Zone: UTC*\n*Credits: Made by rejectmodders on Discord!*")
         with open(f"{interaction.channel.id}.md", 'rb') as f:
             await interaction.followup.send(file=discord.File(f, f"{interaction.channel.name}.md"))
         os.remove(f"{interaction.channel.id}.md")
