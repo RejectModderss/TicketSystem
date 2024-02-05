@@ -12,6 +12,7 @@ class ticket_launcher(discord.ui.View):
 
     @discord.ui.button(label="• Support", emoji='👷', style=discord.ButtonStyle.blurple, custom_id="support")
     async def ticket(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
         interaction.message.author = interaction.user
 
         ticket_category_name = "Support Tickets"
@@ -59,11 +60,11 @@ class ticket_launcher(discord.ui.View):
         )
 
         await channel.send(embed=embed, view=main(self.bot))
-        await interaction.response.defer()
         await interaction.followup.send(f"I've opened a ticket for you at {channel.mention}!", ephemeral=True)
 
     @discord.ui.button(label="• Apply For Staff", emoji='✅', style=discord.ButtonStyle.blurple, custom_id="staff")
     async def staff_application_ticket(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
         interaction.message.author = interaction.user
 
         ticket_category_name = "Apply For Staff Tickets"
@@ -109,11 +110,11 @@ class ticket_launcher(discord.ui.View):
             color=config.main_color
         )
         await channel.send(embed=embed, view=main(self.bot))
-        await interaction.response.defer()
         await interaction.followup.send(f"I've opened a ticket for you at {channel.mention}!", ephemeral=True)
 
     @discord.ui.button(label="• Report User", emoji='🚨', style=discord.ButtonStyle.blurple, custom_id="report")
     async def report_user_ticket(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
         interaction.message.author = interaction.user
 
         ticket_category_name = "Report Tickets"
@@ -160,7 +161,6 @@ class ticket_launcher(discord.ui.View):
         )
 
         await channel.send(embed=embed, view=main(self.bot))
-        await interaction.response.defer()
         await interaction.followup.send(f"I've opened a ticket for you at {channel.mention}!", ephemeral=True)
 
 
